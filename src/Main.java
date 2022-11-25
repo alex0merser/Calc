@@ -1,6 +1,11 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args){
-        System.out.println(calc("2 / 5"));
+        var sc = new Scanner(System.in);
+        var expression = sc.nextLine();
+        System.out.println(calc(expression));
+        sc.close();
     }
     public static String calc(String input) {
         var allItems = new AllItems();
@@ -10,7 +15,6 @@ public class Main {
         if (arrayInput.length != 3){
             throw new RuntimeException();
         }
-
 
         var isOperator = allItems.fitOperator(arrayInput[1]);
         var operand1 = allItems.numOrRimNum(arrayInput[0]);
